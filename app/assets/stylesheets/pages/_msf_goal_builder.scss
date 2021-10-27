@@ -1,0 +1,97 @@
+/* For the function */
+
+// section {
+//   min-height: 100vh;
+//   width: 100%;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+.container {
+  max-width: 400px;
+  width: 90%;
+  padding: 20px;
+}
+
+.step {
+  display: none;
+}
+.step.active {
+  display: block;
+}
+.form-group {
+  width: 100%;
+  margin-top: 20px;
+  color: white;
+}
+
+.msf_btn_pack{
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  input {
+  width: 100%;
+  }
+  input:first-child {
+    margin-bottom: 8px;
+  }
+}
+.header{
+}
+
+.next-btn{
+  background-color: $uporange;
+  border-color: $uporange;
+  height: 35px;
+  color: $upnavy;
+}
+
+.back-btn{
+  background-color: #2F2F3A;
+  border-color: #2F2F3A;
+  color: grey;
+  height: 35px;
+}
+.submit-btn{
+  background-color: $uporange;
+  border-color: $uporange;
+  height: 35px;
+  color: $upnavy;
+}
+
+.dollar-icon-msf{
+  position: absolute;
+  top: 250px;
+  left: 310px;
+  width: 22px;
+}
+
+.msf_button_back{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  input {
+    width: 100%;
+  }
+}
+.form_question_title{
+  color: white;
+  font-family: $upfont;
+  margin-bottom: 8px;
+  margin-top: 16px;
+}
+
+.fieldset{
+  height: 100vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  box-shadow: rgba(0,0,0,0.1) 0px 1px 30px;
+  border-radius: 0px;
+  border: none;
+  padding: 10px 20px !important;
+}

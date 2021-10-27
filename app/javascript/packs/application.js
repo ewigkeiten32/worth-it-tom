@@ -8,7 +8,7 @@ import {goalSaver} from "./goal_saver.js"
 import {animateValue} from "./dashboard.js"
 import {progressBar} from "./progress_bar.js"
 import {askAgainButton} from "./ask_again_button.js"
-
+import {changeStep} from "./msf_goal_saver.js"
 
 
 
@@ -36,6 +36,12 @@ import flatpickr from "flatpickr";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+// const MSP_MAPPING = {
+//   {id: "msf_saver_account"},
+// }
+// Have the HTML IDs stored in an object, along with
+// the position indicator for the form ie. msf_saver, position 1.
+
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
@@ -44,6 +50,7 @@ document.addEventListener('turbolinks:load', () => {
   goalSaver();
   setTimeout(() => {
     progressBar();
+    changeStep();
   }, 500)
 
   setTimeout(() => {
@@ -51,5 +58,6 @@ document.addEventListener('turbolinks:load', () => {
   }, 500)
 
   askAgainButton();
-
 });
+
+

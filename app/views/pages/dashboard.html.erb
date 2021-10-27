@@ -1,18 +1,22 @@
 
 <div class="p-3 mb-2 bg-secondary">
+<!-- Header section -->
   <div class="home_title">
-    <h1>Your Da$hboard</h1>
-    </div>
-    <div class="home_subheading">
-      <p> Turn your cents into centuries -- it's Worth It.</p>
-    </div>
+    <h2>Your Da$hboard</h2>
+  </div>
+  <div class="home_subheading">
+    <p> Turn your cents into centuries -- it's Worth It.</p>
+  </div>
+<!-- Each card lies here -->
   <div class="container_600">
     <div class="goal_cards">
       <%= render "goal_summary" %>
     </div>
+<!-- GIF that divides savers from create account -->
     <div class="dash_gif">
       <%= image_tag("piggy_bank.gif", class: "piggy_bank")%>
     </div>
+<!-- Add Account Card -->
     <div class="card_saver col-12">
       <div class="card_header">
         <div class="header_top">
@@ -28,9 +32,10 @@
         <%= link_to "Add Saver", goal_builder_path, class: "btn btn-warning" %>
       </div>
     </div>
+<!-- Footer with disclaimer -->
     <div class="dashboard_footer">
-      <p><strong> Worth It</strong> is designed, developed and delivered by a bunch of Le Wagon Melbourne students
-      and is obviously not affiliatetd with Up or Ferocia Pty Ltd, but prob should be lezbehonest.</p>
+      <p><strong> Worth It</strong> is designed, developed, and delivered by four Le Wagon Melbourne students
+      and is obviously not affiliated with Up or Ferocia Pty Ltd, but prob should be lezbehonest.</p>
     </div>
   </div>
 </div>
