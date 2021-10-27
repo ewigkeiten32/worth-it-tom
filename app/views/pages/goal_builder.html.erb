@@ -1,54 +1,97 @@
-<div class="p-3 mb-2 ml-1">
-  <div class="home_title">
-    <h1>Build A Goal</h1>
-  </div>
-  <%= render "goal_builder_quotes" %>
-  <div class="card mb-3 mx-auto col-md-4 py-3 shadow-sm rounded">
+<section>
+  <div class="container">
+
+  <!-- Title of the page -->
+    <div class="header">
+      <div class="home_title">
+        <h2>Build A Goal</h2>
+      </div>
+      <%= render "goal_builder_quotes" %>
+    </div>
 
   <!-- Form for building a goal -->
-  <%= simple_form_for @goal do |f| %>
-    <% @goal_names = [] %>
+    <%= simple_form_for @goal do |f| %>
 
-    <!-- Make an array of all current users goal names -->
-    <% @goals.each do |goal| %>
-      <% if goal.user_id == current_user.id %>
-        <% @goal_names << goal.name %>
-      <% end %>
+    <!-- STEP 1 -->
+      <fieldset class="step step1 active">
+        <div class="form-group">
+          <label for="firstQuestion">Select your Up Saver</label>
+             <% @goal_names = [] %>
+             <% @goals.each do |goal| %>
+               <% if goal.user_id == current_user.id %>
+                  <% @goal_names << goal.name %>
+               <% end %>
+             <% end %>
+          <select class="form-control select required form-style" id="goal_form" name="goal[name]">
+            <option value="" disabled selected>My accounts</option>
+
+      <!-- Gets all savings accounts, displays those that don't already have a goal attached -->
+            <% UpApi.goal_saver(current_user.api_key).each do |key, value|%>
+              <% if @goal_names.include? key %>
+                  <% next %>
+                  <% else %>
+                  <option value="<%= key %>" data-balance="<%= value %>"><%= key %></option>
+              <% end %>
+            <% end %>
+          </select>
+
+      <!-- Display the balance of this savings account, javascript located in goal_saver -->
+          <div class="balance">
+            <p> &nbsp;🐷&nbsp;&nbsp;Balance</p>
+            <p class="dollar">$</p>
+            <p id="result">0.00</p>
+          </div>
+        </div>
+        <div class="msf_btn_pack">
+          <input class="next-btn" type="button" name="next" value="Next">
+        </div>
+      </fieldset>
+
+      <!-- STEP 2 -->
+      <fieldset class="step step2">
+        <div class="form-group">
+          <%#= image_tag("dollar-sign.svg", class: "dollar-icon-msf")%>
+          <%= f.input :amount, label: "How much do you want to save?", :input_html => { id: "amount", class: 'form-style' } %>
+        </div>
+        <div class="msf_btn_pack">
+          <input class="back-btn" type="button" name="back" value="Back">
+          <input class="next-btn" type="button" name="next" value="Next">
+        </div>
+      </fieldset>
+
+      <!-- STEP 3 -->
+      <fieldset class="step step3">
+        <div class="form-group">
+          <%= f.input :due_date, id:'goal_due_date', as: :string,label: "When do you want to save it by?", :input_html => {  class: 'form-style' }%>
+
+        <!-- Display weekly contributions for this goal, javascript is located in goal_saver -->
+          <div class="balance">
+            <p>Weekly Contribution</p>
+            <p class="dollar">$</p>
+            <p id="weeks">&nbsp;0.00</p>
+          </div>
+        </div>
+        <div class="msf_btn_pack">
+          <input class="back-btn" type="button" name="back" value="Back">
+          <input class="next-btn" type="button" name="next" value="Next">
+        </div>
+      </fieldset>
+
+      <!-- STEP 4 -->
+      <fieldset class="step step4">
+        <div class="form-group">
+          <%= f.simple_fields_for :reason, Reason.new do |p| %>
+            <%= p.input :description, :input_html => { class: 'form-style'}, label: "Why are you saving for this goal?", placeholder: ["I need to avoid a mid-life crisis", "I want to be financially secure"].sample%>
+          <% end %>
+        </div>
+
+        <div class="msf_btn_pack">
+          <input class="back-btn" type="button" name="back" value="Back">
+          <%= f.submit "Hell Yeah", class: "submit-btn"%>
+        </div>
+      </fieldset>
     <% end %>
-    <select class="form-control select required form-style" id="goal_form" name="goal[name]">
-    <option value="" disabled selected>Select your savings/goal</option>
-
-    <!-- Gets all the savings accounts and displays the ones that dont already have a goal attached -->
-    <% UpApi.goal_saver(current_user.api_key).each do |key, value|%>
-      <% if @goal_names.include? key %>
-        <% next %>
-      <% else %>
-        <option value="<%= key %>" data-balance="<%= value %>"><%= key %></option>
-      <% end %>
-    <% end %>
-    </select>
-
-    <!-- Display the balance of this savings account, javascript for this is located in goal_saver -->
-    <div class="balance">
-      <p>Your Balance:</p>
-      <p class="dollar">$</p>
-      <p id="result">0.00</p>
-    </div>
-    <%= f.input :amount, label: "How much do you want to save?", :input_html => { id: "amount", class: 'form-style' } %>
-    <%= f.input :due_date, id:'goal_due_date', as: :string,label: "When do you want to save it by?", :input_html => {  class: 'form-style' }%>
-
-    <!-- Display the weekly contributions for this goal, javascript for this is located in goal_saver -->
-      <div class="balance">
-        <p>Weekly contribution:</p>
-        <p class="dollar">$</p>
-        <p id="weeks">0.00</p>
-      </div>
-      <%= f.simple_fields_for :reason, Reason.new do |p| %>
-        <%= p.input :description, :input_html => { class: 'form-style'}, label: "Why are you saving for this goal?", placeholder: ["I need to avoid a mid-life crisis", "I want to be financially secure"].sample%>
-      <% end %>
-  <div class= "mt-3 d-flex justify-content-end">
-    <%= f.submit "Hell Yeah", class: "btn btn-primary"%>
   </div>
-  <% end %>
-  </div>
-</div>
+</section>
+
+

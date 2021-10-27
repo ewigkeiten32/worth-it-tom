@@ -1,6 +1,7 @@
 class GoalsController < ApplicationController
 
   def create
+    # binding.pry
     @user = current_user
     @goal = Goal.new(goal_params)
     @goal.user = @user

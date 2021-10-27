@@ -31,7 +31,7 @@
         <%= image_tag("time-icon.svg", class: "time-icon")%>
       </div>
     </div>
-    <%= image_tag("dollar-bill.svg", class: "dollar-bill")%>
+    <%= image_tag("dollar-bill-1.svg", class: "dollar-bill-1")%>
     <div class="card_footer">
       <div class="card_contributions">
         <li><span class="animatednumber" data-max="<%= weeklyContribution[0] %>">0</span></li>
@@ -41,7 +41,7 @@
         :param2 => "#{goal.due_date}",
         :param3 => "#{goal.reason.description}",
         :param4 => weeklyContribution[0]),
-        class: "btn btn-primary" %>
+        class: "btn btn-primary shadow-sm" %>
       </div>
     </div>
   </div>
