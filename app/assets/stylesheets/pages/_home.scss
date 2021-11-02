@@ -7,8 +7,8 @@
 }
 
 .homepage-logo {
-  font-size: 80px;
-  font-family: 'Shadows Into Light', cursive;
+  font-size: 60px;
+  font-family: "Shadows Into Light", cursive;
   font-weight: 900;
   color: $upyellow;
   display: flex;
@@ -18,7 +18,6 @@
 }
 
 .value-prop {
-  font: Circular;
   font-size: 16px;
   font-weight: 400;
   color: $upnavy;
@@ -28,18 +27,21 @@
   // padding-top: 5px;
 }
 
-.homepage{
+.homepage {
   margin: 0;
   padding: 0;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(#FF7A64, #ff8bb5);
+  background: linear-gradient(#ff7a64, #ff8bb5);
 }
 
 .highlight {
-  background-color: $upyellow;
-  border-radius: 5px;
-  padding: 5px;
+  color: $upyellow;
+  width: 600px;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 48px 0px 16px 0px;
+  text-align: center;
 }
 
 .speech-bubble rounded {
@@ -51,7 +53,7 @@
 }
 
 .Pig {
-  height: 100vh;
+  // height: 100vh;
   // width: 100vw;
   display: flex;
   justify-content: center;
@@ -61,25 +63,60 @@
   // padding-right: 20px;
 }
 
+.login_btn_pack {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+
+  input {
+    width: 100%;
+  }
+  input:first-child {
+    margin-bottom: 8px;
+  }
+}
+
+.signup-btn {
+  background-color: $uporange;
+  border-color: $uporange;
+  height: 35px;
+  color: $upnavy;
+  border-radius: 4px;
+  text-align: center;
+  padding: 6px 0px 6px 0px;
+}
+
+.signup-btn-2 {
+  background-color: $upyellow;
+  border-color: $upyellow;
+  height: 35px;
+  color: $upnavy;
+  border-radius: 4px;
+  text-align: center;
+  padding: 6px 0px 6px 0px;
+}
+
 .speech-bubble {
-   background: #cc39d8;
-   color: #fff;
-   display: inline-block;
-   font-size: 14px;
-   line-height: 4em;
-   margin-bottom: 1em;
-   padding: 0 1em;
-   position: relative;
-   text-align: center;
-   vertical-align: top;
-   min-width: 7em;
-   margin: 30px 10px;
+  background: #cc39d8;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+  line-height: 4em;
+  margin-bottom: 1em;
+  padding: 0 1em;
+  position: relative;
+  text-align: center;
+  vertical-align: top;
+  min-width: 7em;
+  margin: 30px 10px;
 }
 
 .speech-bubble:after {
   border: 1em solid transparent;
   border-top-color: #cc39d8;
-  content: '';
+  content: "";
   margin-left: -1em;
   position: absolute;
   top: 100%;
@@ -99,9 +136,10 @@
 }
 
 .navbar {
+  padding-top: 16px;
   height: 8px;
   background-color: $upnavy;
-  color: #66666E;
+  color: #66666e;
 }
 
 .navbar-jay {
@@ -110,9 +148,9 @@
   left: -30px;
   // height: 10px !important;
   padding-bottom: 5px;
-  color: #66666E;
-  @media (min-width:320px) {
-      position: relative;
+  color: #66666e;
+  @media (min-width: 320px) {
+    position: relative;
     left: -15px;
     height: 30px !important;
   }

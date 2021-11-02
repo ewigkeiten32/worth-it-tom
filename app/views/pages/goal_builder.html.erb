@@ -51,7 +51,7 @@
       <fieldset class="step step2">
         <div class="form-group">
           <%#= image_tag("dollar-sign.svg", class: "dollar-icon-msf")%>
-          <%= f.input :amount, label: "How much do you want to save?", :input_html => { id: "amount", class: 'form-style' } %>
+          <%= f.input :amount, label: "How much are you saving up?", placeholder: "Enter your goal here", :input_html => { id: "amount", class: 'form-style' } %>
         </div>
         <div class="msf_btn_pack">
           <input class="back-btn" type="button" name="back" value="Back">
@@ -62,7 +62,7 @@
       <!-- STEP 3 -->
       <fieldset class="step step3">
         <div class="form-group">
-          <%= f.input :due_date, id:'goal_due_date', as: :string,label: "When do you want to save it by?", :input_html => {  class: 'form-style' }%>
+          <%= f.input :due_date, id:'goal_due_date', as: :string,label: "When do you want to save it by?", placeholder: "Select a date", :input_html => { class:'form-style'}%>
 
         <!-- Display weekly contributions for this goal, javascript is located in goal_saver -->
           <div class="balance">
@@ -81,7 +81,7 @@
       <fieldset class="step step4">
         <div class="form-group">
           <%= f.simple_fields_for :reason, Reason.new do |p| %>
-            <%= p.input :description, :input_html => { class: 'form-style'}, label: "Why are you saving for this goal?", placeholder: ["I need to avoid a mid-life crisis", "I want to be financially secure"].sample%>
+            <%= p.input :description, :input_html => { class: 'form-style'}, label: "Why are you saving up for this goal?", placeholder: ["Finish this sentence: I'm saving for this so that I can..."].sample%>
           <% end %>
         </div>
 

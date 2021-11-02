@@ -2,20 +2,20 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
-import {initflatpickr} from "./init_flatpickr.js"
-import {calculator} from "./purchase_creator.js"
-import {goalSaver} from "./goal_saver.js"
-import {animateValue} from "./dashboard.js"
-import {progressBar} from "./progress_bar.js"
-import {askAgainButton} from "./ask_again_button.js"
-import {changeStep} from "./msf_goal_saver.js"
+import { initflatpickr } from "./init_flatpickr.js";
+// import {calculator} from "./purchase_creator.js"
+import { goalSaver } from "./goal_saver.js";
+import { animateValue } from "./dashboard.js";
+import { progressBar } from "./progress_bar.js";
+import { askAgainButton } from "./ask_again_button.js";
+import { changeStep } from "./msf_goal_saver.js";
 
-
-
-require("@rails/ujs").start()
-require("turbolinks").start()
-require("@rails/activestorage").start()
-require("channels")
+require("@rails/ujs").start();
+// require("turbolinks").start()
+require("@rails/activestorage").start();
+require("channels");
+import turbolinks from "turbolinks";
+turbolinks.start();
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -23,7 +23,6 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-
 
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
@@ -42,22 +41,20 @@ import flatpickr from "flatpickr";
 // Have the HTML IDs stored in an object, along with
 // the position indicator for the form ie. msf_saver, position 1.
 
-document.addEventListener('turbolinks:load', () => {
+document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   // initSelect2();
   initflatpickr();
-  calculator();
+  // calculator();
   goalSaver();
   setTimeout(() => {
     progressBar();
-    changeStep();
-  }, 500)
+  }, 500);
+  changeStep();
 
   setTimeout(() => {
     animateValue();
-  }, 500)
+  }, 500);
 
   askAgainButton();
 });
-
-
