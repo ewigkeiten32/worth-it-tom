@@ -19,7 +19,7 @@
 //     border-radius: 15px;
 //     font-family: $upfont;
 //     font-size: 18px;
-//     background-color: #e9ecef;
+
 // }
 .form-style{
   border-color: #2F2F3A;
@@ -29,6 +29,7 @@
   height: 35px;
   padding: 0.375rem 0.75rem;
   border-radius: 4px;
+  background-color: #2F2F3A;
 }
 
 
@@ -40,6 +41,7 @@
   }
   .flatpickr-input {
     padding-left: 6px;
+    color: #FF7A64;
   }
 }
 
@@ -60,4 +62,10 @@
     color: white;
     text-decoration: none;
   }
+}
+.log-in-btn {
+  background-color: white;
+  border-color: white;
+  height: 35px;
+  color: $upnavy;
 }

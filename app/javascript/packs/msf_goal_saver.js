@@ -1,6 +1,8 @@
 const steps = Array.from(document.querySelectorAll("form .step"));
 const nextBtn = document.querySelectorAll("form .next-btn");
 const backBtn = document.querySelectorAll("form .back-btn");
+const worthItBtn = document.querySelectorAll("form .worth-it");
+const askAgainBtn = document.querySelectorAll("form .ask-again")
 const form = document.querySelector("form");
 
 nextBtn.forEach((button) => {
@@ -13,7 +15,16 @@ backBtn.forEach((button) => {
     changeStep("back");
   });
 });
-
+worthItBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    changeStep("worth-it");
+  });
+});
+askAgainBtn.forEach((button) => {
+  button.addEventListener("click", () => {
+    changeStep("ask-again");
+  });
+});
 // form.addEventListener("submit", (e) => {
 //   e.preventDefault();
 //   const inputs = [];
@@ -26,6 +37,7 @@ backBtn.forEach((button) => {
 // });
 
 const changeStep = (btn) => {
+  console.log(steps);
   let index = 0;
   const active = document.querySelector(".active");
   index = steps.indexOf(active);
@@ -33,12 +45,14 @@ const changeStep = (btn) => {
   if (index < 0) return false;
 
   steps[index].classList.remove("active");
-  if (btn === "next") {
+  if (btn === "next" || btn === "worth-it") {
     index++;
   } else if (btn === "back") {
     index--;
+  } else if (btn === "ask-again") {
+    index = 0;
   }
   steps[index].classList.add("active");
-}
+};
 
-export {changeStep};
+export { changeStep };

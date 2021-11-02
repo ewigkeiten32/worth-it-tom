@@ -1,4 +1,4 @@
-<div class="container_600">
+<div class="container">
 
     <h2 class="home_title">Log in</h2>
 
@@ -14,10 +14,13 @@
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
 
-      <div class="card_btn_login">
-        <%= f.button :submit, "Log in" %>
+      <div class="msf_btn_pack">
+       <!--  <%#= f.button :submit, "Log in" %> -->
+        <%= f.submit "Log in", class: "submit-btn"%>
       </div>
     <% end %>
-    <%= render "devise/shared/links" %>
+      <div class="login_btn_pack">
+      <a class="signup-btn-2" type="button" href="/users/sign_up" name="next" value="Sign up">Sign up</a>
+  </div>
 
 </div>

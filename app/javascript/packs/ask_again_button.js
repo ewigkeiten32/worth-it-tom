@@ -12,6 +12,7 @@ function askAgainButton() {
     if (again) {
       again.addEventListener("click",() =>  {
         heading.innerHTML= ""
+        heading.innerText= ""
         impact.innerHTML= ""
         setback.innerHTML=""
         context.innerHTML=""
@@ -22,8 +23,6 @@ function askAgainButton() {
         whatIsCost.value= ""
       })
     }
-
-
 }
 
 export {askAgainButton}
