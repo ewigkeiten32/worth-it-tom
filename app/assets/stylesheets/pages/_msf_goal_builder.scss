@@ -39,6 +39,25 @@
     margin-bottom: 8px;
   }
 }
+
+.msf_btn_pack2{
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  input {
+  width: 100%;
+  }
+  input:first-child {
+    margin-bottom: 8px;
+  }
+  a:hover {
+    color: white;
+    text-decoration: none;
+
+  }
+}
 .header{
 }
 
@@ -63,6 +82,18 @@
   height: 35px;
   color: $upnavy;
   border-radius: 4px;
+}
+
+.submit-btn1{
+  background-color: $uporange;
+  border-color: $uporange;
+  height: 35px;
+  color: $upnavy;
+  border-radius: 4px;
+    a:hover {
+    color: white;
+    text-decoration: none;
+  }
 }
 
 .dollar-icon-msf{
