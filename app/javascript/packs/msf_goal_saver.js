@@ -6,7 +6,7 @@ const askAgainBtn = document.querySelectorAll("form .ask-again")
 const form = document.querySelector("form");
 
 const changeStep = (btn) => {
-  console.log(steps);
+  console.log(steps1);
   let index = 0;
   const active = document.querySelector(".active");
   index = steps.indexOf(active);
