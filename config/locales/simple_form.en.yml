@@ -7,9 +7,9 @@ en:
       mark: '*'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
-      # html: '<abbr title="required">*</abbr>'
+      html: ''
     error_notification:
-      default_message: "Please review the problems below:"
+      default_message: "There are some problems. Chat to the Worth It team:"
     # Examples
     # labels:
     #   defaults:

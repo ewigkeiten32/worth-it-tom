@@ -1,5 +1,7 @@
 class GoalsController < ApplicationController
+
   def create
+    # binding.pry
     @user = current_user
     @goal = Goal.new(goal_params)
     @goal.user = @user
@@ -20,6 +22,10 @@ class GoalsController < ApplicationController
     @goal.update(goal_params)
 
     redirect_to dashboard_path(current_user)
+  end
+
+  def edit
+    @goal = Goal.find(params[:id])
   end
 
   private

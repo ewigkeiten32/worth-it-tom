@@ -2,6 +2,9 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
+    if user_signed_in?
+      redirect_to dashboard_path(current_user)
+    end
   end
 
   def transactions
@@ -14,6 +17,15 @@ class PagesController < ApplicationController
   # end
 
   def dashboard
+    @goal = Goal.new
+    @goal.build_reason
+    @goals = Goal.all
+  end
+
+  def calculator
+  end
+
+  def goal_builder
     @goal = Goal.new
     @goal.build_reason
     @goals = Goal.all

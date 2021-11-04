@@ -7,8 +7,15 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import 'flatpickr/dist/flatpickr.css';
+@import 'flatpickr/dist/flatpickr';
 
 // Your CSS partials
 @import "components/index";
+@import "components/card_saver";
 @import "pages/index";
+@import "pages/calculator_builder";
+@import "pages/dashboard";
+@import "pages/goal_builder";
+@import "pages/form_styling";
+@import "pages/msf_goal_builder";
+

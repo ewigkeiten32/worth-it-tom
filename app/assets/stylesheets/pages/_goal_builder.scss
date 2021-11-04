@@ -1,0 +1,45 @@
+#result {
+    font-size: 18px;
+    display: flex;
+    max-width: fit-content;
+    font-family: $upfont;
+}
+.balance {
+    margin-top: 10px;
+    font-size: 16px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    height: 35px;
+    padding: 0.375rem 0.75rem;
+    border-radius: 4px;
+    background: #2F2F3A;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    // padding-left: 10px;
+    font-family: $upfont;
+    // padding-right: 8px;
+    color: white;
+}
+.dollar {
+    font-size: 18px;
+    display: flex;
+    margin-left: auto;
+    font-family: $upfont;
+}
+
+.card {
+    border-radius: 15px !important;
+}
+
+.quotes {
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+    color: white;
+}
+
+
+.form-actions {
+  color: #2F2F3A;
+}

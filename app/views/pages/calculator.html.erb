@@ -1,0 +1,81 @@
+<!-- 1. Create form with correct names -->
+<!-- 2. Display weekly contribution figure -->
+<!-- 3. Add an ID to the form -->
+<!-- 4. In JS file, store weekly contribution in a variable -->
+<!-- 5. In JS file, select form and store two inputs (name and cost of the purchase) in a variable -->
+<!-- 6. In JS file, when submitting form prevent it from refreshing -->
+<!-- 6. In JS file, when on-submit event you want to execute (weekly contribution - cost of purchase)
+        - Determine how much sum of WC - COP impacts goal timeline
+        - Interpolate impact of goal timeline within reasons for saving
+        - Represent the sum of WC - COP visually
+        -->
+
+<div class="container">
+      <!-- <h1> Your Goal </h1> -->
+  <div class= "home_title" id="goal_name"><h1><%= params[:param1] %></h1></div>
+  <div class= "quotes" id="goal_reason"> "<%= params[:param3] %>"</div>
+
+      <!-- Divs for the calculator sectioned off -->
+    <div class="goals-bg">
+      <div class= "d-flex justify-content-between" id="due_date">
+        <div>Due</div>
+        <div><%= params[:param2] %></div>
+      </div>
+      <div class="wc">
+        <div class=""> Weekly Contribution</div>
+        <div class="dollar"> $ </div>
+        <div id= "weekly-contribution"><%= params[:param4]%></div>
+      </div>
+
+      <!-- THE FORM BEGINS HERE -->
+      <form id="purchase_form" class="calc-form">
+      <!-- STEP 1 -->
+        <fieldset class="step step1 active">
+
+          <label class="purchase" for="purchase">What do you want to buy?</label><br>
+          <input id="what-to-buy" type="text" class="purchase form-control form-style mb-2" name="purchase" autocomplete="off"><br>
+          <div class="msf_btn_pack">
+            <!-- <input class="back-btn" type="button" name="back" value="Back"> -->
+            <input class="next-btn" type="button" name="next" value="Next">
+          </div>
+        </fieldset>
+
+        <!-- STEP 2 -->
+        <fieldset class="step step2">
+          <label class= "cost" for="cost">What's the cost?</label><br>
+          <input id="what-is-cost" type="text" class="cost form-control form-style" name="cost" autocomplete="off">
+
+           <div class="msf_btn_pack">
+             <input class="back-btn" type="button" name="back" value="Back">
+             <input class="submit worth-it" id="calc-submit" type="submit" name="worth-it" value="Worth It?">
+            </div>
+        </fieldset>
+
+        <!-- STEP 3 - RESULTS -->
+        <fieldset class="step step3">
+        <div class="calc-results col-md-12 mx-auto">
+          <h2 id="heading"></h2>
+            <div id="impact"></div>
+              <ul id="list">
+                <li id="setback"></li>
+                <li id="days_reason"></li>
+              </ul>
+              <p id="context"></p>
+              <p id="visual"><p>
+            <div class="impact-btns">
+              <button id="again" class="submit-btn ask-again"> Ask Again </button>
+            </div>
+        </div>
+        </fieldset>
+      </div>
+    </form>
+  </div>
+<div id="goal_name" type="hidden" value="<%= params[:param1] %>" />
+<div id="due_date" type="hidden" value="<%= params[:param2] %>" />
+<div id="goal_reason" type="hidden" value="<%= params[:param3] %>" />
+
+<!-- Create divs for each param -->
+<!-- Hide them so users can't see on the browse -->
+<!-- Access them with JS so the calculator works -->
+
+
